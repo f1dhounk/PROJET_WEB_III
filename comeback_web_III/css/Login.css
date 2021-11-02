@@ -1,0 +1,9 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+#valid{
+    top: 250px;
+    position: relative;
+}
