@@ -22,10 +22,14 @@
 
 				if ($result == "INVALID_USERNAME_PASSWORD") {
 					$authent = 1;
+
+					
+
 				}
 				else {
 					// Pour voir les informations retournées : var_dump($result);exit;
 					$key = $result->key;
+					header("location:lobby.php"); exit; 
 					$authent = 2;
 				}
 

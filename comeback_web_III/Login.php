@@ -4,7 +4,7 @@
 	$action = new LoginAction();
 	$data = $action->execute();
 
-	require_once("partial/header.php");
+	require_once("lespartial/partial_login/header.php");
 ?>
 
     <form action="" method="post" >
@@ -30,4 +30,4 @@
     </form>
 
 <?php
-	require_once("partial/footer.php");
+	require_once("lespartial/partial_login/footer.php");
