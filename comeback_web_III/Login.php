@@ -8,15 +8,23 @@
 ?>
 
     <form action="" method="post" >
+
+        <?php
+            if ($data["authent"] == 2) {
+                ?> <div>Succes : Connexion fonctionne</div> <?php
+            }
+            else if ($data["authent"] == 1) {
+                ?> <div>Erreur : Connexion erronne</div> <?php
+            }
+        ?>
+
         <div id="valid"> 
     
-            <div> <input type="text" name="nom" placeholder="Utilisateur" id="Utilisateur"> </div>
+            <div><input type="text" name="username" ></div>
     
-            <div style="margin-top: 12.5px; margin-bottom: 12.5px;">
-                <input type="password" name="nom" placeholder="Mot_de_passe" id="Mot_de_passe">
-            </div>
+            <div><input type="password" name="password" ></div>
 
-            <div> <button type="submit">DEBUTER</button> </div>
+            <div><button type="submit">DEBUTER</button></div>
     
         </div> 
     </form>

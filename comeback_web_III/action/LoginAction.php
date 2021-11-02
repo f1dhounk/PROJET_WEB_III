@@ -8,19 +8,31 @@
 		}
 
 		protected function executeAction() {
-			$data = [];
-			$data["username"] = "Falcor";
-			$data["password"] = "AAAaaa111";
+			
+			$authent = 0;
 
-			$result = parent::callAPI("signin", $data);
+			if (isset($_POST["username"])) {
 
-			if ($result == "INVALID_USERNAME_PASSWORD") {
-				// err
+				$data = [];
+				$data["username"] = $_POST["username"];
+				$data["password"] = $_POST["password"];
+
+				$result = parent::callAPI("signin", $data);
+				
+
+				if ($result == "INVALID_USERNAME_PASSWORD") {
+					$authent = 1;
+				}
+				else {
+					// Pour voir les informations retournées : var_dump($result);exit;
+					$key = $result->key;
+					$authent = 2;
+				}
+
 			}
-			else {
-				// Pour voir les informations retournées : var_dump($result);exit;
-				$key = $result->key;
-			}
 
+			
+
+			return compact("authent");
 		}
 	}
