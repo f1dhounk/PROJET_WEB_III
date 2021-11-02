@@ -1,0 +1,59 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+@font-face{
+    src: url('../img/CHINESER.TTF');
+    font-family: rdr2;
+}
+
+html {
+    background: url('../img/Histoire/village.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+.fond{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 1535,1px;
+    height: 720px;
+    background-color: black;
+    color: white;
+}
+
+.diapo{
+    width: 500px;
+    height: 250px;
+    background: url(../img/Histoire/village_detruit.jpg);
+    border-style: solid;
+    border-color: aliceblue;
+    align-self: center;
+}
+
+button{
+    width: 100%;
+    height: 25px;
+    background-color: transparent;
+    color: white;
+    border: transparent;
+    font-family: rdr2;
+    font-size: large;
+}
+
+p{
+    font-family: 'Courier New', Courier, monospace;
+    align-self: center;
+    max-width: 500px;
+    color:wheat;
+}
+
+#container {
+	width: 600px;
+	margin: 0 auto;
+	margin-top:100px;
+	background-color:white;
+	height:400px;
+	position:relative;
+}
