@@ -20,11 +20,11 @@
 
         <div id="valid"> 
     
-            <div><input type="text" name="username"></div>
+            <div><input type="text" name="username" placeholder="USERNAME"></div>
     
-            <div><input type="password" name="password"></div>
+            <div><input type="password" name="password" placeholder="PASSWORD"></div>
 
-            <div><button type="submit">DEBUTER</button></div>
+            <div><button type="submit">S'IDENTIFIER</button></div>
     
         </div> 
     </form>

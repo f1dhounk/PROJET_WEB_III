@@ -30,9 +30,7 @@
 				}
 
 			}
-
 			
-
 			return compact("authent");
 		}
 	}
