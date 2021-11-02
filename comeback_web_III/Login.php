@@ -10,11 +10,19 @@
     <form action="" method="post" >
 
         <?php
-            if ($data["authent"] == 2) {
+            if ($data["tab"]["reponse"] == 2) {
                 ?> <div>Succes : Connexion fonctionne</div> <?php
             }
-            else if ($data["authent"] == 1) {
-                ?> <div>Erreur : Connexion erronne</div> <?php
+            else if ($data["tab"]["reponse"] == 1) {
+                ?> <div>Erreur : Connexion erronne</div> 
+                
+                <script> 
+                
+                    document.body.style.backgroundImage = "url('zenitsu_cry.gif')";
+
+                </script>
+                <?php
+                
             }
         ?>
 

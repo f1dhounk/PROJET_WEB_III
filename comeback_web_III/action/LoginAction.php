@@ -8,8 +8,9 @@
 		}
 
 		protected function executeAction() {
-			
-			$authent = 0;
+			$tab = [];
+
+			$authentification = 0;
 
 			if (isset($_POST["username"])) {
 
@@ -21,20 +22,21 @@
 				
 
 				if ($result == "INVALID_USERNAME_PASSWORD") {
-					$authent = 1;
-
-					
+					$authentification = 1;
 
 				}
 				else {
 					// Pour voir les informations retournées : var_dump($result);exit;
 					$key = $result->key;
+					$tab["cle"] = $key;
 					header("location:lobby.php"); exit; 
-					$authent = 2;
+					$authentification = 2;
 				}
 
 			}
+
+			$tab["reponse"] = $authentification;
 			
-			return compact("authent");
+			return compact("tab");
 		}
 	}
