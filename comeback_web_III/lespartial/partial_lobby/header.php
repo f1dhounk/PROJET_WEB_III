@@ -6,5 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lobby</title>
     <link rel="stylesheet" href="css/lobby.css">
+    <script src="js/lobby.js"></script>
 </head>
 <body>
