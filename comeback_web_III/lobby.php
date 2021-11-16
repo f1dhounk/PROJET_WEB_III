@@ -10,18 +10,39 @@
 
 
 <div class="container">
-	
-	<input type="image" src="img/zoro_training.gif" id="training" height="800" width="350"/>
 
-	<input type="image" src="img/fight/narutoVSsasuke_fight.gif" id="fighting" height="650" width="800"/>
+	<a href="training.php">
+		<div class="item1" > 
+			<div class="sub-item1">TRAINING</div>
+			<div class="img1">
+				<img src="img/zoro_training.gif" alt="" height="800" width="350">
+			</div>
+		</div>
+	</a>
 
-	<input type="image" src="img/leaving/sunny_go_leaving.gif" id="leaving" height="800" width="350"/>
+	<a href="jouer.php">
+		<div class="item2" > 
+			<div class="sub-item2">FIGHT</div>
+			<div class="img2">
+				<img src="img/fight/kakashi-kakuzu.gif" alt="" height="650" width="800"> 
+			</div>
+		</div>
+	</a>
+
+	<a href="jouer.php">
+		<div class="item3" > 
+			<div class="sub-item3">LEAVING</div>
+			<div  class="img3">
+				<img src="img/leaving/sunny_go_leaving.gif" alt="" height="800" width="350"> 
+			</div>
+		</div>
+	</a>
 
 </div>
 
 
 
-<iframe style="width:700px;height:240px;" onload="applyStyles(this)" 
+<iframe style="width:800px;height:240px;" onload="applyStyles(this)" 
 	src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
 </iframe>
 
