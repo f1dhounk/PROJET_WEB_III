@@ -17,9 +17,8 @@ body{
 
 header{
     width: 100%;
-    height: 8vh;
-    background: black;
-    opacity: 0.5;
+    height: 10vh;
+    background: rgba(0, 0, 0, 0.582);
 }
 
 footer{
@@ -29,4 +28,26 @@ footer{
     background: black;
     opacity: 0.5;
     bottom: 0px;
+}
+
+/* HEADER */
+.h_container{
+    display: flex;
+    justify-content: center;
+}
+
+.h_item1 {
+
+}
+
+.h_item2 { 
+    
+}
+
+.h_item2 img{
+    border-radius: 50%;
+}
+
+.h_item3 {
+    
 }

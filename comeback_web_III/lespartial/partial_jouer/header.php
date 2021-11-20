@@ -8,4 +8,19 @@
     <link rel="stylesheet" href="css/jouer.css">
 </head>
 <body>
-<header></header>
+<header>
+
+    <div class="h_container" >
+
+        <div class="h_item1">  </div>
+
+        <div class="h_item2"> 
+            <img src="img/hearth.jpg" alt="" height="100" width="100"> 
+            <img src="img/smile.jpg" alt="Avatar" height="150" width="200"> 
+        </div>
+
+        <div class="h_item3">  </div>
+
+    </div>
+
+</header>
