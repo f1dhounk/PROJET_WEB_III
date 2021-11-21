@@ -9,17 +9,31 @@ body {
     height: 100vh;
     background-size: cover;
 
-    display: flex;
-    justify-content: space-around;
-}
-
-iframe {
-    position:absolute;
-    bottom: 0;
+    display: block;
+    /* justify-content: space-around; */
 }
 
 .container{
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: 25fr 30fr 55fr;
+    grid-template-rows: 50fr 50fr;
+    grid-template-areas: 
+        "training fighting leaving"
+        ". chating .";
+}
+
+.item1{
+    grid-area: training;
+}
+
+.item2{
+    grid-area: fighting;
+}
+
+.item3{
+    grid-area: leaving;
+}
+
+.item4{
+    grid-area: chating;
 }
