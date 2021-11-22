@@ -14,17 +14,8 @@ body {
     height: 100vh;
     background-size: cover;
 
-    display: block;
-    /* justify-content: space-around; */
-}
-
-.container{
-    display: grid;
-    grid-template-columns: 25fr 30fr 55fr;
-    grid-template-rows: 50fr 50fr;
-    grid-template-areas: 
-        "training fighting leaving"
-        ". chating .";
+    display: flex; 
+    justify-content: space-around;
 }
 
 .container{
@@ -143,4 +134,9 @@ body {
 
 .img3{
     z-index: -1;
+}
+
+iframe {
+    position: absolute;
+    bottom: 0px;
 }

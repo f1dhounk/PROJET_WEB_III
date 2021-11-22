@@ -1,15 +1,15 @@
 window.addEventListener("load", () => {
     let count = 0
     
-    document.querySelector("#ip").onkeyup = function (e) {
+    document.querySelector("#ip").onclick  = function (e) {
         count = count + 1
         console.log(count);
         if ( count <= 5 )
             add_img(count);
     }
+
+
 });
-
-
 
 function add_img( name ) { 
 

@@ -37,33 +37,9 @@
 			</div>
 		</div>
 	</a>
-
-	<a href="training.php">
-		<div class="item1" >
-			<img src="img/zoro_training.gif" alt=""></div>
-	</a>
-
-	<a href="fighting.php">
-		<div class="item2" >
-			<img src="img/fight/narutoVSsasuke_fight.gif" alt=""></div>
-	</a>
-
-	<a href="fighting.php">
-		<div class="item3" >
-			<img src="img/leaving/sunny_go_leaving.gif" alt=""> </div>
-	</a>
-
-	<div class="item4" >
-		<iframe style="width:700px;height:240px;" onload="applyStyles(this)" 
-		src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
-		</iframe>
-	</div>
-	
 </div>
 
-
-
-<iframe style="width:800px;height:240px;" onload="applyStyles(this)" 
+<iframe style="width:700px;height:240px;" onload="applyStyles(this)" 
 	src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
 </iframe>
 

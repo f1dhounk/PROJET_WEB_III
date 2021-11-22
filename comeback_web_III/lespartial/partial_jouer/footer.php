@@ -17,7 +17,8 @@
         </div>
 
         <div class="f_item3"> 
-            <input type="text" id="ip" placeholder="xx.xx.xx.xx">
+            <input type="image" id="ip" src="img/sb2_hp.png" height="140px" width="260px">
+            <input type="image" id="ip2" src="img/_sb_hp.png" height="140px" width="260px">
         </div>
 
     </div>
