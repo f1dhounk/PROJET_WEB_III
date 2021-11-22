@@ -29,20 +29,25 @@
 		</div>
 	</a>
 
-	<a href="jouer.php">
-		<div class="item3" > 
-			<div class="sub-item3">LEAVING</div>
-			<div  class="img3">
-				<img src="img/leaving/sunny_go_leaving.gif" alt="" height="800" width="350"> 
+	<form action="" method="POST">
+
+		<button type="submit" class="btn">
+			<div class="item3" > 
+				<div class="sub-item3">LEAVING</div>
+				<div  class="img3">
+					<img src="img/leaving/sunny_go_leaving.gif" alt="" height="800" width="350"> 
+				</div>
 			</div>
-		</div>
-	</a>
+		</button>
+
+	</form>
+	
+		
 </div>
 
 <iframe style="width:700px;height:240px;" onload="applyStyles(this)" 
 	src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
 </iframe>
-
 
 <?php
 	require_once("lespartial/partial_lobby/footer.php");
