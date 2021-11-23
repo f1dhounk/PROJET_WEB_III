@@ -1,8 +1,7 @@
 <?php
-	require_once("action/LoginAction.php");
 	require_once("action/LobbyAction.php");
 
-	$action = new LoginAction();
+	$action = new LobbyAction();
 	$data = $action->execute();
 
 	require_once("lespartial/partial_lobby/header.php");
@@ -11,27 +10,41 @@
 
 <div class="container">
 
-	<a href="training.php">
-		<div class="item1" > 
-			<div class="sub-item1">TRAINING</div>
-			<div class="img1">
-				<img src="img/zoro_training.gif" alt="" height="800" width="350">
-			</div>
-		</div>
-	</a>
+	<form action="" method="POST">
 
-	<a href="jouer.php">
-		<div class="item2" > 
-			<div class="sub-item2">FIGHT</div>
-			<div class="img2">
-				<img src="img/fight/kakashi-kakuzu.gif" alt="" height="650" width="800"> 
+		<input type="hidden" name="training" value="123" >
+
+		<button type="submit" >
+			<div class="item1" > 
+				<div class="sub-item1">TRAINING</div>
+				<div class="img1">
+					<img src="img/zoro_training.gif" alt="" height="800" width="350">
+				</div>
 			</div>
-		</div>
-	</a>
+		</button>
+
+	</form>
+		
+	<form action="" method="POST">
+
+		<input type="hidden" name="jouer" value="123" >
+
+		<button type="submit" >
+			<div class="item2" > 
+				<div class="sub-item2">FIGHT</div>
+				<div class="img2">
+					<img src="img/fight/kakashi-kakuzu.gif" alt="" height="650" width="800"> 
+				</div>
+			</div>
+		<button>
+
+	</form>
 
 	<form action="" method="POST">
 
-		<button type="submit" class="btn">
+		<input type="hidden" name="leaving" value="123" >
+
+		<button type="submit">
 			<div class="item3" > 
 				<div class="sub-item3">LEAVING</div>
 				<div  class="img3">
@@ -42,7 +55,6 @@
 
 	</form>
 	
-		
 </div>
 
 <iframe style="width:700px;height:240px;" onload="applyStyles(this)" 
