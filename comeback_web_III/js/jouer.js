@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
     setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
 });
 
-function add_img( name ) { 
+function add_img( name, vie ) { 
     
 
 	var img = document.createElement('img'); 
@@ -16,10 +16,16 @@ function add_img( name ) {
     innerDiv.style.backgroundImage = "url('"+ img.src +"')";
     innerDiv.id = name
 
-    var vie
-    var cout 
-    var atq
-    var mecha
+    var vie = document.createElement('div');
+    var _vie = 
+    vie.style
+
+    var cout = document.createElement('div');
+    
+    
+    
+    var atq = document.createElement('div');
+    var mecha = document.createElement('div');
 
     document.getElementById('cards').appendChild(innerDiv)
 }
