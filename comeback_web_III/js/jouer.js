@@ -21,8 +21,6 @@ function add_img( name ) {
     var atq
     var mecha
 
-
-
     document.getElementById('cards').appendChild(innerDiv)
 }
 
