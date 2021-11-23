@@ -171,6 +171,15 @@ footer{
     height: 260px;
     background-position: center;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.vie {
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-size: cover;
 }
 
 .f_item3{

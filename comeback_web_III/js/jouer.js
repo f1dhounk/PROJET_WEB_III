@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-    let count = 0;
+    let count = 1;
 
     console.log(count);
 
@@ -9,24 +9,42 @@ window.addEventListener("load", () => {
 function add_img( name, vie ) { 
     
 
-	var img = document.createElement('img'); 
-    img.src = 'img/cards/wanted.jpg'; 
+	var img1 = document.createElement('img'); 
+    img1.src = 'img/cards/wanted.jpg'; 
+
+    var img_vie = document.createElement('img');
+    img_vie = 'img/heart_2_bg.png'
 
     var innerDiv = document.createElement('div');
     innerDiv.style.backgroundImage = "url('"+ img.src +"')";
-    innerDiv.id = name
+    innerDiv.id = name;
 
-    var vie = document.createElement('div');
-    var _vie = 
-    vie.style
+    var _vie = document.createElement('div');
+    _vie.style.backgroundImage = "url('"+ img_vie +"')";
+    _vie.className = "vie";
+    var _vieContent = document.createElement('h4');
+    _vieContent.textContent(vie);
+    _vie.appendChild(_vieContent);
 
-    var cout = document.createElement('div');
+    // var cout = document.createElement('div');
+    // _vie.className = "vie";
+    // var _vieContent = document.createElement('h4');
+    // _vieContent.textContent(vie);
+    // _vie.appendChild(_vieContent);
     
-    
-    
-    var atq = document.createElement('div');
-    var mecha = document.createElement('div');
+    // var atq = document.createElement('div');
+    // _vie.className = "vie";
+    // var _vieContent = document.createElement('h4');
+    // _vieContent.textContent(vie);
+    // _vie.appendChild(_vieContent);
 
+    // var mecha = document.createElement('div');
+    // _vie.className = "vie";
+    // var _vieContent = document.createElement('h4');
+    // _vieContent.textContent(vie);
+    // _vie.appendChild(_vieContent);
+
+    innerDiv.appendChild(_vie);
     document.getElementById('cards').appendChild(innerDiv)
 }
 
@@ -46,9 +64,11 @@ const state = () => {
 
             let count = 0;
             data["hand"].forEach(element => {
+                let vie = element.hp;
+                console.log(vie);
                 count += 1;
                 if ( count <= 8  )
-                    add_img(count);
+                    add_img(count, vie);
             });
 
         }
