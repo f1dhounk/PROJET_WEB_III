@@ -17,8 +17,8 @@
         </div>
 
         <div class="f_item3"> 
-            <input type="image" id="ip" src="img/sb2_hp.png" height="140px" width="260px">
-            <input type="image" id="ip2" src="img/_sb_hp.png" height="140px" width="260px">
+            <input type="image" id="ip" src="img/sb2_hp.png" height="120px" width="200px">
+            <input type="image" id="ip2" src="img/_sb_hp.png" height="120px" width="200px">
         </div>
 
     </div>
