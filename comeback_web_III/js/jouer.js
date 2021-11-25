@@ -7,8 +7,6 @@ window.addEventListener("load", () => {
 });
 
 function creerCarte( name, vie, cout, atk, mecha ) { 
-    
-
 	var img1 = document.createElement('img'); 
     img1.src = 'img/cards/wanted.jpg'; 
 
@@ -58,8 +56,11 @@ function creerCarte( name, vie, cout, atk, mecha ) {
     innerDiv.appendChild(_atk);
     innerDiv.appendChild(_mecha);
 
-    // innerDiv.addEventListener("click", jouerCarte(this.getAttribute('class')));
-    document.getElementById('cards').appendChild(innerDiv)
+    innerDiv.onclick = function() {
+        jouerCarte( "PLAY", innerDiv.id );
+    }
+
+    document.getElementById('cards').appendChild(innerDiv);
 }
 
 const state = () => {
@@ -78,6 +79,7 @@ const state = () => {
 
             let count = 0;
             data["hand"].forEach(element => {
+                let uid = element.uid;
                 let cout = element.cost;
                 let vie = element.hp;
                 let atk = element.atk;
@@ -85,7 +87,7 @@ const state = () => {
           
                 count += 1;
                 if ( count <= 8  )
-                    creerCarte(count, vie, cout, atk, mecha);
+                    creerCarte(uid, vie, cout, atk, mecha);
             });
         }
         
@@ -93,8 +95,20 @@ const state = () => {
     })
 }
 
-// function jouerCarte( className ){
-//     var depart = document.querySelector('f_item2');
-//     var arrive = document.querySelector('f_item2');
-//     var carte = document.querySelector(className);
-// }
+function jouerCarte( action, id ){
+    let formdata = new FormData();
+
+    formdata.append("uid", id);
+    formdata.append("action", action);
+
+    fetch("ajax-state.php", {   
+        method : "POST",       
+        credentials: "include",
+        body: formdata
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+
+}
