@@ -13,26 +13,15 @@
 
     <div class="h_container" >
 
-        <div class="h_item1"> 
-            <div> <h4>00</h4> </div>
-            <!-- <div> <h4>00</h4> </div> -->
-            <!-- <div> <h4>00</h4> </div>
-            <div> <h4>00</h4> </div> -->
-        </div>
+        <div class="h_item1"> <h1>00</h1> </div>
 
         <div class="h_item2"> 
-            <div>
-                <h1>30</h1>
-            </div>
-            
-            <!-- <img src="img/smile.jpg" alt="Avatar" height="150" width="200">  -->
+            <div class="h_sub1_item2" > <h1>00</h1> </div>
+            <div class="h_sub2_item2" > <h4>name</h4> </div> 
+            <div class="h_sub3_item2" > <h1>00</h1> </div>           
         </div>
 
-        <div class="h_item3"> 
-            <div>
-                <h1>50</h1>
-            </div>
-        </div>
+        <div class="h_item3"> <h1>00</h1> </div> </div>
 
     </div>
 

@@ -71,11 +71,25 @@ const state = () => {
     })
     .then(response => response.json())
     .then(data => {
+        
 
         console.log(data); // contient les cartes/état du jeu.
 
         if ( data != "WAITING" && data != "LAST_GAME_WON" && data != "LAST_GAME_LOST" ){
             document.getElementById('cards').innerHTML = "";
+           
+            let health = data["hp"];
+            let money = data["mp"];
+            let cards = data["remainingCardsCount"];
+            updateMyCore( health, money, cards );
+
+            let opp_hand = data["opponent"]["handSize"];
+            let opp_health = data["opponent"]["hp"];
+            let opp_name = data["opponent"]["username"];
+            let opp_money = data["opponent"]["mp"];
+            let opp_deck = data["opponent"]["remainingCardsCount"];
+            updateOppCore( opp_hand, opp_health, opp_name, opp_money, opp_deck );
+           
 
             let count = 0;
             data["hand"].forEach(element => {
@@ -110,5 +124,29 @@ function jouerCarte( action, id ){
     .then(data => {
         console.log(data);
     })
+}
 
+function updateMyCore( health, money, cards ) {
+    let HealthCore = document.querySelector('.f_sub1_item1');
+    let MoneyCore = document.querySelector('.f_sub2_item1');
+    let CardCore = document.querySelector('.f_sub3_item1');
+
+    HealthCore.getElementsByTagName("h4")[0].innerHTML = health;
+    MoneyCore.getElementsByTagName("h4")[0].innerHTML = money;
+    CardCore.getElementsByTagName("h4")[0].innerHTML = cards;
+    
+}
+
+function updateOppCore( hand, health, name, money, deck ){
+    let Hand = document.querySelector('.h_item1');
+    let HealthCore = document.querySelector('.h_sub1_item2');
+    let Name = document.querySelector('.h_sub2_item2');
+    let MoneyCore = document.querySelector('.h_sub3_item2');
+    let Deck = document.querySelector('.h_item3');
+
+    Hand.getElementsByTagName("h1")[0].innerHTML = hand;
+    HealthCore.getElementsByTagName("h1")[0].innerHTML = health;
+    Name.getElementsByTagName("h4")[0].innerHTML = name;
+    MoneyCore.getElementsByTagName("h1")[0].innerHTML = money;
+    Deck.getElementsByTagName("h1")[0].innerHTML = deck;
 }
