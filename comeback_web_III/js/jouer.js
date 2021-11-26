@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
     setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
 });
 
-function creerCarte( name, vie, cout, atk, mecha ) { 
+function creerCarte( name, vie, cout, atk, mecha, interface ) { 
 	var img1 = document.createElement('img'); 
     img1.src = 'img/cards/wanted.jpg'; 
 
@@ -60,7 +60,12 @@ function creerCarte( name, vie, cout, atk, mecha ) {
         jouerCarte( "PLAY", innerDiv.id );
     }
 
-    document.getElementById('cards').appendChild(innerDiv);
+    if ( interface == "HAND" )
+        document.getElementById('cards').appendChild(innerDiv);
+    else if ( interface == "MY_BOARD" )
+        document.getElementById("myBoard").appendChild(innerDiv);
+    else if ( interface == "OPP_BOARD" )
+        document.getElementById("OppBoard").appendChild(innerDiv);
 }
 
 const state = () => {
@@ -100,7 +105,7 @@ const state = () => {
           
                 count += 1;
                 if ( count <= 8  )
-                    creerCarte(uid, vie, cout, atk, mecha);
+                    creerCarte(uid, vie, cout, atk, mecha, "HAND");
             });
 
             updateBoard(data);
@@ -153,31 +158,30 @@ function updateOppCore( hand, health, name, money, deck ){
 }
 
 function updateBoard( data ){
-    let myBoard = document.querySelector('myBoard');
-    let OppBoard = document.querySelector('OppBoard');
-    let uid;
-    let carte;
-
-
+    document.getElementById('OppBoard').innerHTML = "";
+    document.getElementById('myBoard').innerHTML = "";
+ 
     if ( data["board"].length != 0 ){
         data["board"].forEach(element => {
-            uid = element.uid;
-            carte = document.querySelector(`#${CSS.escape(uid)}`);
-            console.log(carte);
-            console.log(myBoard);
-            myBoard.appendChild(carte);
+            let uid = element.uid;
+            let cout = element.cost;
+            let vie = element.hp;
+            let atk = element.atk;
+            let mecha = element.mechanics[0];
+        
+            creerCarte(uid, vie, cout, atk, mecha, "MY_BOARD");
         });
     }
-    
+
     if ( data["opponent"]["board"].length != 0 ){
         data["opponent"]["board"].forEach(element => {
-            uid = element.uid;
-            carte = document.querySelector(`#${CSS.escape(uid)}`);
-            console.log(carte);
-            console.log(OppBoard);
-            OppBoard.appendChild(carte);
+            let uid = element.uid;
+            let cout = element.cost;
+            let vie = element.hp;
+            let atk = element.atk;
+            let mecha = element.mechanics[0];
+        
+            creerCarte(uid, vie, cout, atk, mecha, "OPP_BOARD");
         });
     }
-   
-
 }
