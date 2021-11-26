@@ -89,7 +89,6 @@ const state = () => {
             let opp_money = data["opponent"]["mp"];
             let opp_deck = data["opponent"]["remainingCardsCount"];
             updateOppCore( opp_hand, opp_health, opp_name, opp_money, opp_deck );
-           
 
             let count = 0;
             data["hand"].forEach(element => {
@@ -103,6 +102,8 @@ const state = () => {
                 if ( count <= 8  )
                     creerCarte(uid, vie, cout, atk, mecha);
             });
+
+            updateBoard(data);
         }
         
         setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
@@ -149,4 +150,34 @@ function updateOppCore( hand, health, name, money, deck ){
     Name.getElementsByTagName("h4")[0].innerHTML = name;
     MoneyCore.getElementsByTagName("h1")[0].innerHTML = money;
     Deck.getElementsByTagName("h1")[0].innerHTML = deck;
+}
+
+function updateBoard( data ){
+    let myBoard = document.querySelector('myBoard');
+    let OppBoard = document.querySelector('OppBoard');
+    let uid;
+    let carte;
+
+
+    if ( data["board"].length != 0 ){
+        data["board"].forEach(element => {
+            uid = element.uid;
+            carte = document.querySelector(`#${CSS.escape(uid)}`);
+            console.log(carte);
+            console.log(myBoard);
+            myBoard.appendChild(carte);
+        });
+    }
+    
+    if ( data["opponent"]["board"].length != 0 ){
+        data["opponent"]["board"].forEach(element => {
+            uid = element.uid;
+            carte = document.querySelector(`#${CSS.escape(uid)}`);
+            console.log(carte);
+            console.log(OppBoard);
+            OppBoard.appendChild(carte);
+        });
+    }
+   
+
 }
