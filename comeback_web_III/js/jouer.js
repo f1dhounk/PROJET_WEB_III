@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
     setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
 });
 
-function creerCarte( name, vie, cout, atk, mecha, interface ) { 
+function creerCarte( name, vie, cout, atk, mecha, bourse, interface ) { 
 	var img1 = document.createElement('img'); 
     img1.src = 'img/cards/wanted.jpg'; 
 
@@ -56,16 +56,26 @@ function creerCarte( name, vie, cout, atk, mecha, interface ) {
     innerDiv.appendChild(_atk);
     innerDiv.appendChild(_mecha);
 
-    innerDiv.onclick = function() {
-        jouerCarte( "PLAY", innerDiv.id );
-    }
+    
+    
 
-    if ( interface == "HAND" )
+    if ( interface == "HAND" ){
+        innerDiv.onclick = function() { jouerCarte( "PLAY", innerDiv.id ); }
+
+        if ( bourse >= cout ){
+            innerDiv.style.borderStyle = "solid";
+            innerDiv.style.borderColor = "red"
+        }
         document.getElementById('cards').appendChild(innerDiv);
-    else if ( interface == "MY_BOARD" )
-        document.getElementById("myBoard").appendChild(innerDiv);
+    }  
+    else if ( interface == "MY_BOARD" ){
+        innerDiv.onclick = function() { jouerCarte( "ATTACK", innerDiv.id ); }
+        // CONTINUE ICI POUR L'ATTAQUE
+
+        document.querySelector(".myBoard").appendChild(innerDiv);
+    }
     else if ( interface == "OPP_BOARD" )
-        document.getElementById("OppBoard").appendChild(innerDiv);
+        document.querySelector(".OppBoard").appendChild(innerDiv);
 }
 
 const state = () => {
@@ -76,7 +86,6 @@ const state = () => {
     })
     .then(response => response.json())
     .then(data => {
-        
 
         console.log(data); // contient les cartes/état du jeu.
 
@@ -105,10 +114,20 @@ const state = () => {
           
                 count += 1;
                 if ( count <= 8  )
-                    creerCarte(uid, vie, cout, atk, mecha, "HAND");
+                    creerCarte(uid, vie, cout, atk, mecha, money, "HAND"); 
             });
 
             updateBoard(data);
+
+            if ( data["yourTurn"] ){
+                document.getElementById('ip2').style.borderStyle = "solid"
+                document.getElementById('ip2').style.borderColor = "green"
+            }
+            else {
+                document.getElementById('ip2').style.borderStyle = "solid"
+                document.getElementById('ip2').style.borderColor = "red"
+            }
+                
         }
         
         setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
@@ -158,8 +177,10 @@ function updateOppCore( hand, health, name, money, deck ){
 }
 
 function updateBoard( data ){
-    document.getElementById('OppBoard').innerHTML = "";
-    document.getElementById('myBoard').innerHTML = "";
+    let money = data["mp"];
+
+    document.querySelector('.OppBoard').innerHTML = "";
+    document.querySelector('.myBoard').innerHTML = "";
  
     if ( data["board"].length != 0 ){
         data["board"].forEach(element => {
@@ -169,7 +190,7 @@ function updateBoard( data ){
             let atk = element.atk;
             let mecha = element.mechanics[0];
         
-            creerCarte(uid, vie, cout, atk, mecha, "MY_BOARD");
+            creerCarte(uid, vie, cout, atk, mecha, money, "MY_BOARD");
         });
     }
 
@@ -181,7 +202,7 @@ function updateBoard( data ){
             let atk = element.atk;
             let mecha = element.mechanics[0];
         
-            creerCarte(uid, vie, cout, atk, mecha, "OPP_BOARD");
+            creerCarte(uid, vie, cout, atk, mecha, money, "OPP_BOARD");
         });
     }
 }

@@ -8,9 +8,9 @@
 	require_once("lespartial/partial_jouer/header.php");
 ?>
 
-<div id="OppBoard" ></div>
+<div class="OppBoard" ></div>
 
-<div id="myBoard" ></div>
+<div class="myBoard" ></div>
 
 <?php
 	require_once("lespartial/partial_jouer/footer.php");

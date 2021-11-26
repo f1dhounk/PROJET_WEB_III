@@ -23,6 +23,10 @@
 
                     $result = parent::callAPI("games/action", $_data);
                 }
+                else {
+                    $_data["type"] = $_POST["action"];
+                    $result = parent::callAPI("games/action", $_data);
+                }
             }
             else
                 $result = parent::callAPI("games/state", $_data);
