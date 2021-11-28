@@ -6,7 +6,7 @@
 
 <div class="myBoard" ></div>
 
-<div class="waiting" > WAITING </div>
+<div class="waiting" > WAITING... </div>
     
 <?php
 	require_once("lespartial/partial_jouer/footer.php");

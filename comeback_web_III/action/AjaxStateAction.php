@@ -40,9 +40,10 @@
             }
             else {
                 $result = parent::callAPI("games/state", $_data);
+
+                
             }
                 
-            
             return compact("result");
         }
     }

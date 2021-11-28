@@ -9,7 +9,31 @@
 </head>
 <body>
     
-    <div class="endgame" >YOU LOST</div>
+    <div class="endgame" ></div>
+
+    <script>
+
+        fetch("ajax-state.php", {  
+            method : "POST",       
+            credentials: "include"
+        })
+        .then(response => response.json())
+        .then(data => { 
+            
+            if ( data == "LAST_GAME_WON" ){
+                document.body.style.backgroundImage = "url('img/you_win.gif')";
+                document.querySelector('.endgame').innerHTML = "YOU WIN !!";
+            }
+            else{
+                document.body.style.backgroundImage = "url('img/zenitsu_cry.gif')";
+                document.querySelector('.endgame').innerHTML = "YOU LOST :(";
+            }
+
+
+        })
+
+
+    </script>
 
 </body>
 </html>

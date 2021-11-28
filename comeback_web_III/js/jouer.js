@@ -92,6 +92,15 @@ const state = () => {
             document.querySelector('.waiting').style.opacity = "0";
         }
 
+        if ( data == "LAST_GAME_WON" ){
+            window.location.replace('endgame.php');
+        }
+
+        if ( data == "LAST_GAME_LOST" ){
+            window.location.replace('endgame.php');
+        }
+       
+
         if ( data != "WAITING" && data != "LAST_GAME_WON" && data != "LAST_GAME_LOST" ){
             document.getElementById('cards').innerHTML = "";
            

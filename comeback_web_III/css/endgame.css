@@ -14,18 +14,20 @@ body{
     height: 100vh;
     background-size: cover;
     font-family: anime;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .endgame {
     font-family: anime;
-    font-size: xx-large;
+    font-size: 160px;
     font-weight: bolder;
     
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
-    width: 100px;
-    height: 100px;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
 }
