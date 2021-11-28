@@ -28,11 +28,7 @@
                 document.body.style.backgroundImage = "url('img/zenitsu_cry.gif')";
                 document.querySelector('.endgame').innerHTML = "YOU LOST :(";
             }
-
-
         })
-
-
     </script>
 
 </body>

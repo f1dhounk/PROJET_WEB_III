@@ -2,7 +2,7 @@ window.addEventListener("load", () => {
     setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
 });
 
-function creerCarte( name, vie, cout, atk, mecha, bourse, interface ) { 
+function creerCarte( name, vie, cout, atk, mecha, bourse, state, interface ) { 
 	var img1 = document.createElement('img'); 
     img1.src = 'img/cards/wanted.jpg'; 
 
@@ -57,18 +57,31 @@ function creerCarte( name, vie, cout, atk, mecha, bourse, interface ) {
 
         if ( bourse >= cout ){
             innerDiv.style.borderStyle = "solid";
-            innerDiv.style.borderColor = "red"
+            innerDiv.style.borderColor = "red";
         }
         document.getElementById('cards').appendChild(innerDiv);
     }  
     else if ( interface == "MY_BOARD" ){
         innerDiv.onclick = function() { jouerCarte( "BOARD", innerDiv.id ); }
 
+
+        if ( state == "SLEEP" ){
+            innerDiv.style.opacity = "0.5"
+        }
+        else{
+            innerDiv.style.opacity = "1"
+        }
         document.querySelector(".myBoard").appendChild(innerDiv);
     }
     else if ( interface == "OPP_BOARD" ){
         innerDiv.onclick = function() { jouerCarte( "ATTACK", innerDiv.id ); }
 
+        if ( state == "SLEEP" ){
+            innerDiv.style.opacity = "0.5"
+        }
+        else{
+            innerDiv.style.opacity = "1"
+        }
         document.querySelector(".OppBoard").appendChild(innerDiv);
     }
        
@@ -126,24 +139,37 @@ const state = () => {
           
                 count += 1;
                 if ( count <= 8  )
-                    creerCarte(uid, vie, cout, atk, mecha, money, "HAND"); 
+                    creerCarte(uid, vie, cout, atk, mecha, money, "NONE", "HAND"); 
             });
 
             updateBoard(data);
 
-            if ( data["yourTurn"] ){
-                document.getElementById('ip2').style.borderStyle = "solid"
-                document.getElementById('ip2').style.borderColor = "green"
-            }
-            else {
-                document.getElementById('ip2').style.borderStyle = "solid"
-                document.getElementById('ip2').style.borderColor = "red"
-            }
+            turnNpower(data);
                 
         }
         
         setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
     })
+}
+
+function turnNpower( data ){
+    if ( data["yourTurn"] ){
+        document.getElementById('ip2').style.borderStyle = "solid"
+        document.getElementById('ip2').style.borderColor = "green"
+    }
+    else {
+        document.getElementById('ip2').style.borderStyle = "solid"
+        document.getElementById('ip2').style.borderColor = "red"
+    }
+
+    if ( !data["heroPowerAlreadyUsed"] && data["mp"] >= 2){
+        document.getElementById('ip').style.borderStyle = "solid"
+        document.getElementById('ip').style.borderColor = "green"
+    }
+    else {
+        document.getElementById('ip').style.borderStyle = "solid"
+        document.getElementById('ip').style.borderColor = "red"
+    }
 }
 
 function jouerCarte( action, id ){
@@ -207,8 +233,9 @@ function updateBoard( data ){
             let vie = element.hp;
             let atk = element.atk;
             let mecha = element.mechanics[0];
+            let state = element.state;
         
-            creerCarte(uid, vie, cout, atk, mecha, money, "MY_BOARD");
+            creerCarte(uid, vie, cout, atk, mecha, money, state, "MY_BOARD");
         });
     }
 
@@ -219,8 +246,9 @@ function updateBoard( data ){
             let vie = element.hp;
             let atk = element.atk;
             let mecha = element.mechanics[0];
+            let state = element.state;
         
-            creerCarte(uid, vie, cout, atk, mecha, money, "OPP_BOARD");
+            creerCarte(uid, vie, cout, atk, mecha, money, state, "OPP_BOARD");
         });
     }
 }
