@@ -1,8 +1,4 @@
 window.addEventListener("load", () => {
-    let count = 1;
-
-    console.log(count);
-
     setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
 });
 
@@ -56,9 +52,6 @@ function creerCarte( name, vie, cout, atk, mecha, bourse, interface ) {
     innerDiv.appendChild(_atk);
     innerDiv.appendChild(_mecha);
 
-    
-    
-
     if ( interface == "HAND" ){
         innerDiv.onclick = function() { jouerCarte( "PLAY", innerDiv.id ); }
 
@@ -69,13 +62,16 @@ function creerCarte( name, vie, cout, atk, mecha, bourse, interface ) {
         document.getElementById('cards').appendChild(innerDiv);
     }  
     else if ( interface == "MY_BOARD" ){
-        innerDiv.onclick = function() { jouerCarte( "ATTACK", innerDiv.id ); }
-        // CONTINUE ICI POUR L'ATTAQUE
+        innerDiv.onclick = function() { jouerCarte( "BOARD", innerDiv.id ); }
 
         document.querySelector(".myBoard").appendChild(innerDiv);
     }
-    else if ( interface == "OPP_BOARD" )
+    else if ( interface == "OPP_BOARD" ){
+        innerDiv.onclick = function() { jouerCarte( "ATTACK", innerDiv.id ); }
+
         document.querySelector(".OppBoard").appendChild(innerDiv);
+    }
+       
 }
 
 const state = () => {
@@ -88,6 +84,13 @@ const state = () => {
     .then(data => {
 
         console.log(data); // contient les cartes/état du jeu.
+
+        if ( data == "WAITING" ){
+            document.querySelector('.waiting').style.opacity = "1";
+        }
+        else{
+            document.querySelector('.waiting').style.opacity = "0";
+        }
 
         if ( data != "WAITING" && data != "LAST_GAME_WON" && data != "LAST_GAME_LOST" ){
             document.getElementById('cards').innerHTML = "";
@@ -136,9 +139,14 @@ const state = () => {
 
 function jouerCarte( action, id ){
     let formdata = new FormData();
-
-    formdata.append("uid", id);
+    
     formdata.append("action", action);
+    
+    if ( action == "ATTACK" )
+        formdata.append("targetuid", id);
+    else 
+        formdata.append("uid", id);
+
 
     fetch("ajax-state.php", {   
         method : "POST",       
@@ -148,8 +156,9 @@ function jouerCarte( action, id ){
     .then(response => response.json())
     .then(data => {
         console.log(data);
-    })
+    })  
 }
+
 
 function updateMyCore( health, money, cards ) {
     let HealthCore = document.querySelector('.f_sub1_item1');

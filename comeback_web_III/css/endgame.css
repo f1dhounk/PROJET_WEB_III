@@ -1,0 +1,31 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+@font-face{
+    src: url('../font/animeace2_reg.ttf');
+    font-family: anime;
+}
+
+body{
+    background-image: url('../img/zenitsu_cry.gif');
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+    font-family: anime;
+}
+
+.endgame {
+    font-family: anime;
+    font-size: xx-large;
+    font-weight: bolder;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+}

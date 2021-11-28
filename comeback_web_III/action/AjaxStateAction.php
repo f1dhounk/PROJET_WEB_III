@@ -23,13 +23,25 @@
 
                     $result = parent::callAPI("games/action", $_data);
                 }
+                else if ( $_POST["action"] == "BOARD"  ){
+                    $_SESSION["first_click"] = $_POST["uid"];
+                }
+                else if ( $_POST["action"] == "ATTACK"  ){
+                    $_data["type"] = $_POST["action"];
+                    $_data["uid"] = $_SESSION["first_click"];
+                    $_data["targetuid"] = $_POST["targetuid"];
+
+                    $result = parent::callAPI("games/action", $_data);
+                }
                 else {
                     $_data["type"] = $_POST["action"];
                     $result = parent::callAPI("games/action", $_data);
                 }
             }
-            else
+            else {
                 $result = parent::callAPI("games/state", $_data);
+            }
+                
             
             return compact("result");
         }

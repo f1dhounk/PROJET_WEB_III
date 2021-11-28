@@ -22,7 +22,7 @@
 
 
 				if ( $resultat == "JOINED_TRAINING" ){
-					header("location:training.php"); exit;
+					header("location:jouer.php"); exit;
 				}
 				else {
 					var_dump($resultat);exit;

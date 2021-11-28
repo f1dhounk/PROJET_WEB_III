@@ -17,7 +17,7 @@
 
         <div class="h_item2"> 
             <div class="h_sub1_item2" > <h1>00</h1> </div>
-            <div class="h_sub2_item2" > <h4>name</h4> </div> 
+            <div class="h_sub2_item2" onclick="jouerCarte( 'ATTACK', 0 )"> <h4>name</h4> </div> 
             <div class="h_sub3_item2" > <h1>00</h1> </div>           
         </div>
 
