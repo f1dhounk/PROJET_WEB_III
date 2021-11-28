@@ -2,19 +2,71 @@ window.addEventListener("load", () => {
     setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
 });
 
+
+/* MAIN FUNCTION */
+const state = () => {
+
+    fetch("ajax-state.php", {   
+        method : "POST",       
+        credentials: "include"
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        console.log(data); 
+
+        gameState(data);
+
+        if ( data != "WAITING" && data != "LAST_GAME_WON" && data != "LAST_GAME_LOST" ){
+            document.getElementById('cards').innerHTML = "";
+           
+            let health = data["hp"];
+            let money = data["mp"];
+            let cards = data["remainingCardsCount"];
+            updateMyCore( health, money, cards );
+
+            let opp_hand = data["opponent"]["handSize"];
+            let opp_health = data["opponent"]["hp"];
+            let opp_name = data["opponent"]["username"];
+            let opp_money = data["opponent"]["mp"];
+            let opp_deck = data["opponent"]["remainingCardsCount"];
+            updateOppCore( opp_hand, opp_health, opp_name, opp_money, opp_deck );
+
+            let count = 0;
+            data["hand"].forEach(element => {
+                let uid = element.uid;
+                let cout = element.cost;
+                let vie = element.hp;
+                let atk = element.atk;
+                let mecha = element.mechanics[0];
+          
+                count += 1;
+                if ( count <= 8  )
+                    creerCarte(uid, vie, cout, atk, mecha, money, "NONE", "HAND"); 
+            });
+
+            updateBoard(data);
+
+            turnNpower(data);
+                
+        }
+        
+        setTimeout(state, 1000); 
+    })
+}
+
 function creerCarte( name, vie, cout, atk, mecha, bourse, state, interface ) { 
 	var img1 = document.createElement('img'); 
     img1.src = 'img/cards/wanted.jpg'; 
 
     var img_vie = document.createElement('img');
-    img_vie = 'img/heart_2_bg.png';
+    img_vie = 'img/icon/heart_2_bg.png';
 
     var img_cout = document.createElement('img');
-    img_cout = 'img/WLotus_bg.png';
+    img_cout = 'img/icon/WLotus_bg.png';
 
     var img_atk = document.createElement('img');
-    img_atk = 'img/akatsuki.png';
-
+    img_atk = 'img/icon/akatsuki.png';
 
     var innerDiv = document.createElement('div');
     innerDiv.style.backgroundImage = "url('"+ img1.src +"')";
@@ -87,69 +139,23 @@ function creerCarte( name, vie, cout, atk, mecha, bourse, state, interface ) {
        
 }
 
-const state = () => {
+function gameState( data ){
 
-    fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
-        method : "POST",       // l’API (games/state)
-        credentials: "include"
-    })
-    .then(response => response.json())
-    .then(data => {
+    if ( data == "WAITING" ){
+        document.querySelector('.waiting').style.opacity = "1";
+    }
+    else{
+        document.querySelector('.waiting').style.opacity = "0";
+    }
 
-        console.log(data); // contient les cartes/état du jeu.
+    if ( data == "LAST_GAME_WON" ){
+        window.location.replace('endgame.php');
+    }
 
-        if ( data == "WAITING" ){
-            document.querySelector('.waiting').style.opacity = "1";
-        }
-        else{
-            document.querySelector('.waiting').style.opacity = "0";
-        }
+    if ( data == "LAST_GAME_LOST" ){
+        window.location.replace('endgame.php');
+    }
 
-        if ( data == "LAST_GAME_WON" ){
-            window.location.replace('endgame.php');
-        }
-
-        if ( data == "LAST_GAME_LOST" ){
-            window.location.replace('endgame.php');
-        }
-       
-
-        if ( data != "WAITING" && data != "LAST_GAME_WON" && data != "LAST_GAME_LOST" ){
-            document.getElementById('cards').innerHTML = "";
-           
-            let health = data["hp"];
-            let money = data["mp"];
-            let cards = data["remainingCardsCount"];
-            updateMyCore( health, money, cards );
-
-            let opp_hand = data["opponent"]["handSize"];
-            let opp_health = data["opponent"]["hp"];
-            let opp_name = data["opponent"]["username"];
-            let opp_money = data["opponent"]["mp"];
-            let opp_deck = data["opponent"]["remainingCardsCount"];
-            updateOppCore( opp_hand, opp_health, opp_name, opp_money, opp_deck );
-
-            let count = 0;
-            data["hand"].forEach(element => {
-                let uid = element.uid;
-                let cout = element.cost;
-                let vie = element.hp;
-                let atk = element.atk;
-                let mecha = element.mechanics[0];
-          
-                count += 1;
-                if ( count <= 8  )
-                    creerCarte(uid, vie, cout, atk, mecha, money, "NONE", "HAND"); 
-            });
-
-            updateBoard(data);
-
-            turnNpower(data);
-                
-        }
-        
-        setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
-    })
 }
 
 function turnNpower( data ){

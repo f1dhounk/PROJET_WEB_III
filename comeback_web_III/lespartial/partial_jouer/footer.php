@@ -17,8 +17,8 @@
         </div>
 
         <div class="f_item3"> 
-            <input type="image" id="ip" src="img/sb2_hp.png" height="120px" width="200px" onclick="jouerCarte( 'HERO_POWER', 0 )" >
-            <input type="image" id="ip2" src="img/_sb_hp.png" height="120px" width="200px" onclick="jouerCarte( 'END_TURN', 0 )" >
+            <input type="image" id="ip" src="img/icon/sb2_hp.png" height="120px" width="200px" onclick="jouerCarte( 'HERO_POWER', 0 )" >
+            <input type="image" id="ip2" src="img/icon/_sb_hp.png" height="120px" width="200px" onclick="jouerCarte( 'END_TURN', 0 )" >
         </div>
 
     </div>

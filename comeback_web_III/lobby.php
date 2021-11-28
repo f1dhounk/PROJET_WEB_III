@@ -18,7 +18,7 @@
 			<div class="item1" > 
 				<div class="sub-item1">TRAINING</div>
 				<div class="img1">
-					<img src="img/zoro_training.gif" alt="" height="800" width="350">
+					<img src="img/training/zoro_training.gif" alt="" height="800" width="350">
 				</div>
 			</div>
 		</button>

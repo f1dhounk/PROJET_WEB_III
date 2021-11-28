@@ -9,7 +9,7 @@
 }
 
 body{
-    background-image: url('../img/palm_close.png');
+    background-image: url('../img/background/palm_close.png');
     background-repeat: no-repeat;
     height: 100vh;
     background-size: cover;
@@ -60,7 +60,7 @@ footer{
 }
 
 .h_sub1_item2{
-    background-image: url('../img/heart_2_bg.png');
+    background-image: url('../img/icon/heart_2_bg.png');
     background-position: center;
     background-size: cover;
     width: 150px;
@@ -70,7 +70,7 @@ footer{
 }
 
 .h_sub2_item2{
-    background-image: url('../img/smile.jpg');
+    background-image: url('../img/icon/smile.jpg');
     background-position: center;
     background-size: cover;
     width: 200px;
@@ -86,7 +86,7 @@ footer{
 }
 
 .h_sub3_item2{
-    background-image: url('../img/WLotus_bg.png');
+    background-image: url('../img/icon/WLotus_bg.png');
     background-position: center;
     background-size: cover;
     width: 90px;
@@ -108,7 +108,7 @@ footer{
 }
 
 .h_item3 {
-    background-image: url('../img/seal_bg.png');
+    background-image: url('../img/icon/seal_bg.png');
     background-position: center;
     background-size: cover;
     width: 100px;
@@ -206,7 +206,7 @@ footer{
 }
 
 .f_sub1_item1{
-    background-image: url('../img/heart_2_bg.png');
+    background-image: url('../img/icon/heart_2_bg.png');
     background-position: center;
     background-size: cover;
     width: 80px;
@@ -216,7 +216,7 @@ footer{
 }
 
 .f_sub2_item1{
-    background-image: url('../img/WLotus_bg.png');
+    background-image: url('../img/icon/WLotus_bg.png');
     background-position: center;
     background-size: cover;
     width: 80px;
@@ -229,7 +229,7 @@ footer{
 }
 
 .f_sub3_item1{
-    background-image: url('../img/seal_bg.png');
+    background-image: url('../img/icon/seal_bg.png');
     background-position: center;
     background-size: cover;
     width: 80px;
