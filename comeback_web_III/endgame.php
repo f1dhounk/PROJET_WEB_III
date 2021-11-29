@@ -22,11 +22,11 @@
             
             if ( data == "LAST_GAME_WON" ){
                 document.body.style.backgroundImage = "url('img/background/you_win.gif')";
-                document.querySelector('.endgame').innerHTML = "YOU WIN !!";
+                document.querySelector('.endgame').innerHTML = "YOU WIN";
             }
             else{
                 document.body.style.backgroundImage = "url('img/background/zenitsu_cry.gif')";
-                document.querySelector('.endgame').innerHTML = "YOU LOST :(";
+                document.querySelector('.endgame').innerHTML = "YOU LOST:(";
             }
         })
     </script>

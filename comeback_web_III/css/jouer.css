@@ -83,6 +83,7 @@ footer{
     text-align: center;
     display:table;
     color: black;
+    cursor: pointer;
 }
 
 .h_sub3_item2{
@@ -155,6 +156,7 @@ footer{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    cursor: pointer;
 }
 
 .OppBoard div{
@@ -165,6 +167,7 @@ footer{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    cursor: pointer;
 }
 
 .OppBoard h4 {

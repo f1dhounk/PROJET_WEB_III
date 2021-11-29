@@ -54,7 +54,7 @@ body {
     vertical-align: middle;
     line-height: 800px;
 
-    font-size: 20px;
+    font-size: 46px;
     font-weight: bolder;
     font-family: anime;
     color: black;
@@ -71,8 +71,8 @@ body {
 /*-----------------------------------------*/
 
 .item2  {
-    width: 800px;
-    height: 650px;
+    width: 530px;
+    height: 700px;
     position: relative;
 }
 
@@ -92,7 +92,7 @@ body {
     vertical-align: middle;
     line-height: 650px;
 
-    font-size: 20px;
+    font-size: 46px;
     font-weight: bolder;
     font-family: anime;
     color: black;
@@ -108,10 +108,49 @@ body {
 
 /*--------------------------------------------*/
 
+.item4  {
+    width: 530px;
+    height: 700px;
+    position: relative;
+}
+
+.item4:hover{
+    border: 2px solid black;
+}
+
+.sub-item4, .img4  {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.sub-item4{
+    opacity: 0;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 650px;
+
+    font-size: 46px;
+    font-weight: bolder;
+    font-family: anime;
+    color: black;
+}
+
+.sub-item4:hover{
+    opacity: 1;
+}
+
+.img4{
+    z-index: -1;
+}
+
+/*--------------------------------------------*/
+
 .item3  {
     width: 350px;
     height: 800px;
     position: relative;
+    align-items: flex-start;
 }
 
 .item3:hover{
@@ -130,7 +169,7 @@ body {
     vertical-align: middle;
     line-height: 800px;
 
-    font-size: 20px;
+    font-size: 46px;
     font-weight: bolder;
     font-family: anime;
     color: black;
