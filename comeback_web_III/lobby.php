@@ -40,7 +40,7 @@
 		
 	</form>
 
-	<form action="" method="POST">
+	<form action="note.php" method="POST">
 
 		<input type="hidden" name="note" value="123" >
 
