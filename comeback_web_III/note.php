@@ -16,18 +16,18 @@
 
         <form action="" method="GET" >
 
-            <div class="answer">
+            <div class="commentaire">
                 
-                <div class="author">
-                    <input type="text" name="auteur" required placeholder="Votre sujet" style="width: 900px; height: 50px;" >
+                <div class="sujet">
+                    <input type="text" name="sujet" required placeholder="Votre sujet" style="width: 900px; height: 50px;" >
                 </div>
 
-                <div class="author">
-                    <input name="auteur" required placeholder="Votre description" style="width: 900px; height: 50px;" >
+                <div class="description">
+                    <input name="description" required placeholder="Votre description" style="width: 900px; height: 50px;" >
                 </div>
                 
-                <div class="text">
-                    <textarea name="text" required placeholder="Vos notes" style="width: 900px; height: 100px;" ></textarea>
+                <div class="note">
+                    <textarea name="note" required placeholder="Vos notes" style="width: 900px; height: 100px;" ></textarea>
                 </div>
 
                 <div class="send-btn">

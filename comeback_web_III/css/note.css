@@ -38,7 +38,7 @@ body{
     
 }
 
-.answer {
+.commentaire {
 	border:1px solid #ddd;
 	width:100%;
 	padding:5px;
@@ -48,12 +48,18 @@ body{
     top: 50%;
 }
 
-.answer .text {
+.answer .note {
     
 	margin-bottom:10px;
 }
 
-.answer .author {
+.answer .description {
+    margin-top:10px;
+    margin-bottom:10px;
+	font-size:0.9em;
+}
+
+.answer .sujet {
     margin-top:10px;
     margin-bottom:10px;
 	font-size:0.9em;
