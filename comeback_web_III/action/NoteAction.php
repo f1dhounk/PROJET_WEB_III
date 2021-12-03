@@ -8,16 +8,18 @@
         }
 
         protected function executeAction() {
-            //$result = AnswerDAO::getAnswer();
-            $result = [];
-            if(isset($_GET["text"]) && isset($_GET["auteur"])) {
-                AnswerDAO::addAnswer($_GET["auteur"], $_GET["text"]);
+            $result = array();
+
+
+            if(isset($_GET["sujet"]) && isset($_GET["descr"]) && isset($_GET["notes"]) ) {
+                
+                AnswerDAO::addnotes($_GET["sujet"], $_GET["descr"], $_GET["notes"] );
+                var_dump("hello");
                 header("location:index.php");
 				exit;
-
             }
             
-            $result = AnswerDAO::getAnswer();
+            $result = AnswerDAO::getnotes();
 
 
 

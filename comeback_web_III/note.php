@@ -1,44 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOTE</title>
-    <link rel="stylesheet" href="css/note.css">
-</head>
-<body>
-    
-    <div class="save" ></div>
+<?php
+	require_once("action/NoteAction.php");
 
-    <div class="write" >
-        <h1> NOTES / COMMENTAIRES </h1>
+	$action = new NoteAction();
+	$data = $action->execute();
 
-        <form action="" method="GET" >
+	require_once("partial_notes/header.php");
+?>
 
-            <div class="commentaire">
-                
-                <div class="sujet">
-                    <input type="text" name="sujet" required placeholder="Votre sujet" style="width: 900px; height: 50px;" >
-                </div>
+<div class="save" ></div>
 
-                <div class="description">
-                    <input name="description" required placeholder="Votre description" style="width: 900px; height: 50px;" >
-                </div>
-                
-                <div class="note">
-                    <textarea name="note" required placeholder="Vos notes" style="width: 900px; height: 100px;" ></textarea>
-                </div>
+<div class="write" >
+    <h1> NOTES / COMMENTAIRES </h1>
 
-                <div class="send-btn">
-                    <a href="envoyer=true"><button>Envoyer</button></a>
-                </div>
+    <form action="" method="GET" >
 
+        <div class="commentaire">
+            
+            <div class="sujet">
+                <input type="text" name="sujet" required placeholder="Votre sujet" style="width: 900px; height: 50px;" >
             </div>
 
-        </form>
+            <div class="description">
+                <input name="descr" required placeholder="Votre description" style="width: 900px; height: 50px;" >
+            </div>
+            
+            <div class="note">
+                <textarea name="notes" required placeholder="Vos notes" style="width: 900px; height: 100px;" ></textarea>
+            </div>
 
-    </div>
+            <div class="send-btn">
+                <a href="envoyer=true"><button>Envoyer</button></a>
+            </div>
 
-</body>
-</html>
+        </div>
+
+    </form>
+
+</div>
+
+<?php
+	require_once("partial_notes/footer.php");
