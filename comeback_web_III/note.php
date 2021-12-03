@@ -4,7 +4,7 @@
 	$action = new NoteAction();
 	$data = $action->execute();
 
-	require_once("partial_notes/header.php");
+	require_once("lespartial/partial_notes/header.php");
 ?>
 
 <div class="save" ></div>
@@ -20,7 +20,7 @@
                 <input type="text" name="sujet" required placeholder="Votre sujet" style="width: 900px; height: 50px;" >
             </div>
 
-            <div class="description">
+            <div class="descr">
                 <input name="descr" required placeholder="Votre description" style="width: 900px; height: 50px;" >
             </div>
             
@@ -39,4 +39,4 @@
 </div>
 
 <?php
-	require_once("partial_notes/footer.php");
+	require_once("lespartial/partial_notes/footer.php");
