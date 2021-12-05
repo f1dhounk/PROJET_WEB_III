@@ -33,7 +33,7 @@
                         </form>
 
                         <div class="modif_btn">
-                            <button onclick="modif('<?= $result['sujet'] ?>', '<?= $result['descr'] ?>', '<?= $result['notes'] ?>')" >MODIFIER</button>
+                            <button onclick="modif('<?= $result['sujet'] ?>', '<?= $result['descr'] ?>', '<?= $result['notes'] ?>', '<?= $result['id'] ?>')" >MODIFIER</button>
                         </div>
 
                     </div>

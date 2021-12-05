@@ -10,17 +10,23 @@
         protected function executeAction() {
             $result = array();
 
-
+            
             if(isset($_GET["sujet"]) && isset($_GET["descr"]) && isset($_GET["notes"]) ) {
                 
                 AnswerDAO::addnotes($_GET["sujet"], $_GET["descr"], $_GET["notes"] );
-                var_dump("hello");
+                
                 header("location:note.php");
 				exit;
             }
 
             if( isset($_POST["id"]) ){
                 AnswerDAO::suppnotes( $_POST["id"] );
+                
+            }
+
+            if( isset($_POST["_id"]) ){
+                AnswerDAO::suppnotes( $_POST["_id"] );
+                var_dump("hello");
             }
             
             $result = AnswerDAO::getnotes();
