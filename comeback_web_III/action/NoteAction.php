@@ -18,6 +18,10 @@
                 header("location:note.php");
 				exit;
             }
+
+            if( isset($_POST["id"]) ){
+                AnswerDAO::suppnotes( $_POST["id"] );
+            }
             
             $result = AnswerDAO::getnotes();
 

@@ -14,21 +14,33 @@
             ?>
                 <div class="les_notes">
                     <div class="a_sujet">
-                        Sujet :<?= $result["sujet"] ?>
+                        Sujet : <?= $result["sujet"] ?>
                     </div>
                     <div class="a_descr">
-                        Description :<?= $result["descr"] ?>
+                        Description : <?= $result["descr"] ?>
                     </div>
                     <div class="a_notes">
-                        Note :<?= $result["notes"] ?>
-                    </div>
-                    <div class="send-btn">
-                        <a href="envoyer=true"><button>Envoyer</button></a>
-                    </div>
-                    <div class="send-btn">
-                        <a href="envoyer=true"><button>Envoyer</button></a>
+                        Note : <?= $result["notes"] ?>
                     </div>
 
+                    <div class="gen_btn" >
+                        
+                        <form action="" method="POST">
+                            <input type="hidden" name="id" value=<?= $result["id"] ?> >
+                            <div class="supp_btn">
+                                <button>SUPPRIMER</button>
+                            </div>
+                        </form>
+
+                        <div class="modif_btn">
+                            <button onclick="modif('<?= $result['sujet'] ?>', '<?= $result['descr'] ?>', '<?= $result['notes'] ?>')" >MODIFIER</button>
+                        </div>
+
+                    </div>
+
+                    
+
+                   
                 </div>
             <?php
         }
@@ -56,7 +68,7 @@
             </div>
 
             <div class="send-btn">
-                <a href="envoyer=true"><button>Envoyer</button></a>
+                <a href="envoyer=true"><button>ENVOYER</button></a>
             </div>
 
         </div>

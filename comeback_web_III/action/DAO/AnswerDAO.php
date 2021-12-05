@@ -26,6 +26,7 @@
             while($ligne = $statement->fetch()) {
                 $tab = array();
 
+                $tab["id"] = $ligne["id"];
                 $tab["sujet"] = $ligne["sujet"];
                 $tab["descr"] = $ligne["descr"];
                 $tab["notes"] = $ligne["notes"];
@@ -34,5 +35,13 @@
             }
 
             return $result;
+        }
+
+        public static function suppnotes( $id ){
+            $connection = Connection::getConnection();
+
+            $statement = $connection->prepare("DELETE FROM take_notes WHERE id = ?");
+            $statement->bindParam(1, $id);
+            $statement->execute();
         }
     }
