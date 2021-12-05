@@ -1,8 +1,8 @@
 <?php
     require_once("action/CommonAction.php");
-    require_once("DAO/AnswerDAO.php");
+    require_once("action/DAO/AnswerDAO.php");
 
-    class IndexAction extends CommonAction {
+    class NoteAction extends CommonAction {
         public function __construct() {
             parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
         }
@@ -15,14 +15,11 @@
                 
                 AnswerDAO::addnotes($_GET["sujet"], $_GET["descr"], $_GET["notes"] );
                 var_dump("hello");
-                header("location:index.php");
+                header("location:note.php");
 				exit;
             }
             
             $result = AnswerDAO::getnotes();
-
-
-
 
             return compact("result");
         }

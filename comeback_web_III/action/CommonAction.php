@@ -1,6 +1,8 @@
 <?php
 	session_start();
 
+    require_once("action/constante.php");
+
     abstract class CommonAction {
         protected static $VISIBILITY_PUBLIC = 0;
         protected static $VISIBILITY_MEMBER = 1;

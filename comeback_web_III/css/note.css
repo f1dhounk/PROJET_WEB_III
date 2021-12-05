@@ -27,6 +27,25 @@ body{
     border-color: green;
 }
 
+.les_notes{
+    padding-bottom: 20px;
+}
+
+.a_sujet{
+    
+}
+
+.a_descr{
+
+}
+
+.a_notes{
+
+}
+
+
+/*////////////////////////////////////////////////////////////////////*/
+
 .write{
     width: 50%;
     height: 99.5vh;

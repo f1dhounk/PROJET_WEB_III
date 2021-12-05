@@ -1,5 +1,5 @@
 <?php
-    require_once("DAO/Connection.php");
+    require_once("action/DAO/Connection.php");
 
 
     class AnswerDAO {
@@ -9,7 +9,7 @@
 
             $statement = $connection->prepare("INSERT INTO take_notes(sujet, descr, notes) VALUES (?, ?, ?)");
             $statement->bindParam(1, $sujet);
-            $statement->bindParam(2, $desc);
+            $statement->bindParam(2, $descr);
             $statement->bindParam(3, $notes);
             $statement->execute();
         }

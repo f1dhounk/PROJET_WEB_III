@@ -7,7 +7,34 @@
 	require_once("lespartial/partial_notes/header.php");
 ?>
 
-<div class="save" ></div>
+<div class="save" >
+
+    <?php
+        foreach($data["result"] as $result) {
+            ?>
+                <div class="les_notes">
+                    <div class="a_sujet">
+                        Sujet :<?= $result["sujet"] ?>
+                    </div>
+                    <div class="a_descr">
+                        Description :<?= $result["descr"] ?>
+                    </div>
+                    <div class="a_notes">
+                        Note :<?= $result["notes"] ?>
+                    </div>
+                    <div class="send-btn">
+                        <a href="envoyer=true"><button>Envoyer</button></a>
+                    </div>
+                    <div class="send-btn">
+                        <a href="envoyer=true"><button>Envoyer</button></a>
+                    </div>
+
+                </div>
+            <?php
+        }
+    ?>
+
+</div>
 
 <div class="write" >
     <h1> NOTES / COMMENTAIRES </h1>
