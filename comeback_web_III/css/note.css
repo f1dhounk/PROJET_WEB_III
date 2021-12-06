@@ -25,10 +25,13 @@ body{
 
     border: solid;
     border-color: green;
+
+    overflow-y: auto;
 }
 
 .les_notes{
     padding-bottom: 20px;
+    
 }
 
 .a_sujet{

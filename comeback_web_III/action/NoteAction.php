@@ -20,13 +20,12 @@
             }
 
             if( isset($_POST["id"]) ){
-                AnswerDAO::suppnotes( $_POST["id"] );
-                
+                AnswerDAO::suppnotes( $_POST["id"] ); 
             }
 
-            if( isset($_POST["_id"]) ){
-                AnswerDAO::suppnotes( $_POST["_id"] );
-                var_dump("hello");
+            if ( isset($_POST["od"]) ){
+                var_dump($_POST["od"]);
+                AnswerDAO::suppnotes( $_POST["od"] ); 
             }
             
             $result = AnswerDAO::getnotes();

@@ -4,5 +4,4 @@
     $action = new NoteAction();
     $data = $action->execute();
 
-    // encodage en json des donnees recu chez AjaxAction 
     echo json_encode($data["result"]);

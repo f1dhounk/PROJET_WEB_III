@@ -13,6 +13,9 @@
         foreach($data["result"] as $result) {
             ?>
                 <div class="les_notes">
+                    <div class="a_temp">
+                        Date : <?= $result["temp"] ?>
+                    </div>
                     <div class="a_sujet">
                         Sujet : <?= $result["sujet"] ?>
                     </div>
@@ -37,10 +40,6 @@
                         </div>
 
                     </div>
-
-                    
-
-                   
                 </div>
             <?php
         }
@@ -68,7 +67,7 @@
             </div>
 
             <div class="send-btn">
-                <a href="envoyer=true"><button>ENVOYER</button></a>
+                <button>ENVOYER</button>
             </div>
 
         </div>

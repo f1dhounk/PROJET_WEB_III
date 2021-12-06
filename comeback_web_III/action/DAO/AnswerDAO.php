@@ -27,6 +27,7 @@
                 $tab = array();
 
                 $tab["id"] = $ligne["id"];
+                $tab["temp"] = $ligne["_date"];
                 $tab["sujet"] = $ligne["sujet"];
                 $tab["descr"] = $ligne["descr"];
                 $tab["notes"] = $ligne["notes"];
