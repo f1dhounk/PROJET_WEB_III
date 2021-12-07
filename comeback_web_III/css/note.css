@@ -23,9 +23,6 @@ body{
     width: 50%;
     height: 99.5vh;
 
-    border: solid;
-    border-color: green;
-
     overflow-y: auto;
 }
 
@@ -34,33 +31,10 @@ body{
     
 }
 
-.a_sujet{
-    
-}
-
-.a_descr{
-
-}
-
-.a_notes{
-
-}
-
 .gen_btn{
     display: flex;
     flex-direction: row;
 }
-
-.supp_btn{
-
-}
-
-.modif_btn{
-
-}
-
-
-
 
 /*////////////////////////////////////////////////////////////////////*/
 
@@ -68,43 +42,31 @@ body{
     width: 50%;
     height: 99.5vh;
 
-    border: solid;
-    border-color: blue;
-    justify-content: center;
-    align-items: center;
-    
+    display: flex;
+    flex-direction: column;
 }
 
 .commentaire {
-	border:1px solid #ddd;
-	width:100%;
-	padding:5px;
-	margin-bottom:10px;
+	width:80%;
 
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     position: fixed;
-    top: 50%;
-    
+    top: 20%;
+    padding-left: 70px;
 }
 
-.answer .note {
-    
-	margin-bottom:10px;
+.note {
+    margin-bottom: 10px;
 }
 
-.answer .descr {
-    margin-top:10px;
-    margin-bottom:10px;
-	font-size:0.9em;
+.descr {
+    margin-bottom: 10px;
 }
 
-.answer .sujet {
-    margin-top:10px;
-    margin-bottom:10px;
-	font-size:0.9em;
-}
-
-.send-btn {
-	margin-top:10px;
+.sujet {
+    margin-bottom: 10px;
 }
 
 h1{

@@ -170,7 +170,6 @@ function turnNpower( data ){
         countdown.getElementsByTagName("h4")[0].style.color = "crimson"
         countdown.getElementsByTagName("h4")[0].style.fontSize = "60px"
 
-        _countdown.style.opacity = "0";
     }
     else {
         document.getElementById('ip2').style.borderStyle = "solid"
@@ -180,9 +179,6 @@ function turnNpower( data ){
         countdown.getElementsByTagName("h4")[0].innerHTML = data["opponent"]["username"];
         countdown.getElementsByTagName("h4")[0].style.color = "black"
         countdown.getElementsByTagName("h4")[0].style.fontSize = "20px"
-
-        _countdown.innerHTML = data["remainingTurnTime"];
-        _countdown.style.opacity = "1";
     }
 
     if ( !data["heroPowerAlreadyUsed"] && data["mp"] >= 2){

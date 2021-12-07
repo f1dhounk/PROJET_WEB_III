@@ -3,6 +3,11 @@
     padding:0;
 }
 
+@font-face{
+    src: url('../font/animeace2_reg.ttf');
+    font-family: anime;
+}
+
 body {
     background-image: url('../img/background/gojo_domain_expansion.gif');
     background-repeat: no-repeat;
@@ -15,16 +20,23 @@ body {
 
 #valid{
     top: 250px;
+    left: 290px;
     position: relative;
 }
 
 button{
-    width: 100%;
+    width: 174px;
     height: 30px;
-    font-family: rdr2;
+    font-family: anime;
 }
 
 input{
     text-align: center;
     height: 40px;
+}
+
+.magix{
+    font-family: anime;
+    font-size: 100px;
+    color: orangered;
 }

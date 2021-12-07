@@ -29,7 +29,7 @@ body {
 .container{
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    gap: 10px;
 }
 
 .item1  {
@@ -71,7 +71,7 @@ body {
 /*-----------------------------------------*/
 
 .item2  {
-    width: 530px;
+    width: 450px;
     height: 700px;
     position: relative;
 }
@@ -109,7 +109,7 @@ body {
 /*--------------------------------------------*/
 
 .item4  {
-    width: 530px;
+    width: 450px;
     height: 700px;
     position: relative;
 }

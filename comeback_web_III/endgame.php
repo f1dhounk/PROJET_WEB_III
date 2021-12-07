@@ -23,10 +23,16 @@
             if ( data == "LAST_GAME_WON" ){
                 document.body.style.backgroundImage = "url('img/background/you_win.gif')";
                 document.querySelector('.endgame').innerHTML = "YOU WIN";
+                setTimeout(() => {
+                    window.location.replace("lobby.php")
+                }, 5000);
             }
             else{
                 document.body.style.backgroundImage = "url('img/background/zenitsu_cry.gif')";
                 document.querySelector('.endgame').innerHTML = "YOU LOST:(";
+                setTimeout(() => {
+                    window.location.replace("lobby.php")
+                }, 5000);
             }
         })
     </script>

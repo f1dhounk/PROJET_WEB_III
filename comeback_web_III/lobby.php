@@ -33,7 +33,7 @@
 			<div class="item2" > 
 				<div class="sub-item2">FIGHT</div>
 				<div class="img2">
-					<img src="img/fight/kakashi-kakuzu.gif" alt="" height="700" width="530"> 
+					<img src="img/fight/kakashi-kakuzu.gif" alt="" height="700" width="450"> 
 				</div>
 			</div>
 		</button>
@@ -48,7 +48,7 @@
 			<div class="item4" > 
 				<div class="sub-item4">TAKE NOTE</div>
 				<div class="img4">
-					<img src="img/notes/note.gif" alt="" height="700" width="530"> 
+					<img src="img/notes/note.gif" alt="" height="700" width="450"> 
 				</div>
 			</div>
 		</button>
