@@ -17,7 +17,7 @@
                         Date : <?= $result["temp"] ?>
                     </div>
                     <div class="a_sujet">
-                        Sujet : <?= $result["sujet"] ?>
+                        Sujet : <?= $result["sujet"] ?>9
                     </div>
                     <div class="a_descr">
                         Description : <?= $result["descr"] ?>
@@ -70,9 +70,12 @@
                 <button>ENVOYER</button>
             </div>
 
+            
         </div>
 
     </form>
+
+    <a href="lobby.php"><button>RETOUR</button></a>
 
 </div>
 

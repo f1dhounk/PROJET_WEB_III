@@ -27,10 +27,9 @@ const state = () => {
 
             let opp_hand = data["opponent"]["handSize"];
             let opp_health = data["opponent"]["hp"];
-            let opp_name = data["opponent"]["username"];
             let opp_money = data["opponent"]["mp"];
             let opp_deck = data["opponent"]["remainingCardsCount"];
-            updateOppCore( opp_hand, opp_health, opp_name, opp_money, opp_deck );
+            updateOppCore( opp_hand, opp_health, opp_money, opp_deck );
 
             let count = 0;
             data["hand"].forEach(element => {
@@ -159,13 +158,31 @@ function gameState( data ){
 }
 
 function turnNpower( data ){
+    let countdown = document.querySelector(".h_sub2_item2");
+    let _countdown = document.querySelector('.waiting');
+
     if ( data["yourTurn"] ){
         document.getElementById('ip2').style.borderStyle = "solid"
         document.getElementById('ip2').style.borderColor = "green"
+
+        countdown.style.color = "crimson";
+        countdown.getElementsByTagName("h4")[0].innerHTML = data["remainingTurnTime"];
+        countdown.getElementsByTagName("h4")[0].style.color = "crimson"
+        countdown.getElementsByTagName("h4")[0].style.fontSize = "60px"
+
+        _countdown.style.opacity = "0";
     }
     else {
         document.getElementById('ip2').style.borderStyle = "solid"
         document.getElementById('ip2').style.borderColor = "red"
+
+        countdown.style.color = "black";
+        countdown.getElementsByTagName("h4")[0].innerHTML = data["opponent"]["username"];
+        countdown.getElementsByTagName("h4")[0].style.color = "black"
+        countdown.getElementsByTagName("h4")[0].style.fontSize = "20px"
+
+        _countdown.innerHTML = data["remainingTurnTime"];
+        _countdown.style.opacity = "1";
     }
 
     if ( !data["heroPowerAlreadyUsed"] && data["mp"] >= 2){
@@ -212,16 +229,14 @@ function updateMyCore( health, money, cards ) {
     
 }
 
-function updateOppCore( hand, health, name, money, deck ){
+function updateOppCore( hand, health, money, deck ){
     let Hand = document.querySelector('.h_item1');
     let HealthCore = document.querySelector('.h_sub1_item2');
-    let Name = document.querySelector('.h_sub2_item2');
     let MoneyCore = document.querySelector('.h_sub3_item2');
     let Deck = document.querySelector('.h_item3');
 
     Hand.getElementsByTagName("h1")[0].innerHTML = hand;
     HealthCore.getElementsByTagName("h1")[0].innerHTML = health;
-    Name.getElementsByTagName("h4")[0].innerHTML = name;
     MoneyCore.getElementsByTagName("h1")[0].innerHTML = money;
     Deck.getElementsByTagName("h1")[0].innerHTML = deck;
 }
