@@ -145,6 +145,7 @@ function gameState( data ){
     }
     else{
         document.querySelector('.waiting').style.opacity = "0";
+        document.querySelector('.waiting').style.display = "none"
     }
 
     if ( data == "LAST_GAME_WON" ){

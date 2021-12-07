@@ -59,14 +59,20 @@ body{
 
 .note {
     margin-bottom: 10px;
-}
-
-.descr {
-    margin-bottom: 10px;
+    font-family: anime;
 }
 
 .sujet {
     margin-bottom: 10px;
+    font-family: anime;
+}
+
+input{
+    font-family: anime;
+}
+
+textarea{
+    font-family: anime;
 }
 
 h1{
