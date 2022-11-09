@@ -25,7 +25,7 @@
             }
         ?>
 
-        <div class="magix" >ANIME MAGIX</div>
+        <!-- <div class="magix" >ANIME MAGIX</div> -->
 
         <div id="valid"> 
             <div><input type="text" name="username" placeholder="USERNAME"></div>

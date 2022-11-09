@@ -25,7 +25,7 @@
 
 	</form>
 		
-	<form action="" method="POST">
+	<!-- <form action="" method="POST">
 
 		<input type="hidden" name="jouer" value="123" >
 
@@ -38,7 +38,7 @@
 			</div>
 		</button>
 		
-	</form>
+	</form> -->
 
 	<!-- <form action="note.php" method="POST">
 
@@ -55,7 +55,7 @@
 
 	</form> -->
 
-	<form action="" method="POST">
+	<!-- <form action="" method="POST">
 
 		<input type="hidden" name="leaving" value="123" >
 
@@ -68,13 +68,13 @@
 			</div>
 		</button>
 
-	</form>
+	</form> -->
 	
 </div>
 
-<iframe style="width:700px;height:240px;" onload="applyStyles(this)" 
+<!-- <iframe style="width:700px;height:240px;" onload="applyStyles(this)" 
 	src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
-</iframe>
+</iframe> -->
 
 <?php
 	require_once("lespartial/partial_lobby/footer.php");
