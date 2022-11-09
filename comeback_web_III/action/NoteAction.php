@@ -11,9 +11,9 @@
             $result = array();
 
             
-            if(isset($_GET["sujet"]) && isset($_GET["descr"]) && isset($_GET["notes"]) ) {
+            if(isset($_GET["sujet"])  && isset($_GET["notes"]) ) {
                 
-                AnswerDAO::addnotes($_GET["sujet"], $_GET["descr"], $_GET["notes"] );
+                AnswerDAO::addnotes($_GET["sujet"], $_GET["notes"] );
                 
                 header("location:note.php");
 				exit;

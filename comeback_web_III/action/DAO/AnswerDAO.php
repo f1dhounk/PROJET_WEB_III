@@ -4,13 +4,12 @@
 
     class AnswerDAO {
 
-        public static function addnotes($sujet, $descr, $notes) {
+        public static function addnotes($sujet, $notes) {
             $connection = Connection::getConnection();
 
-            $statement = $connection->prepare("INSERT INTO take_notes(sujet, descr, notes) VALUES (?, ?, ?)");
+            $statement = $connection->prepare("INSERT INTO take_notes(sujet, notes) VALUES (?, ?)");
             $statement->bindParam(1, $sujet);
-            $statement->bindParam(2, $descr);
-            $statement->bindParam(3, $notes);
+            $statement->bindParam(2, $notes);
             $statement->execute();
         }
 
@@ -29,7 +28,6 @@
                 $tab["id"] = $ligne["id"];
                 $tab["temp"] = $ligne["_date"];
                 $tab["sujet"] = $ligne["sujet"];
-                $tab["descr"] = $ligne["descr"];
                 $tab["notes"] = $ligne["notes"];
 
                 $result[] = $tab;

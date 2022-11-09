@@ -19,9 +19,7 @@
                     <div class="a_sujet">
                         Sujet : <?= $result["sujet"] ?>9
                     </div>
-                    <div class="a_descr">
-                        Description : <?= $result["descr"] ?>
-                    </div>
+              
                     <div class="a_notes">
                         Note : <?= $result["notes"] ?>
                     </div>
@@ -36,7 +34,7 @@
                         </form>
 
                         <div class="modif_btn">
-                            <button onclick="modif('<?= $result['sujet'] ?>', '<?= $result['descr'] ?>', '<?= $result['notes'] ?>', '<?= $result['id'] ?>')" >MODIFIER</button>
+                            <button onclick="modif('<?= $result['sujet'] ?>', '<?= $result['notes'] ?>', '<?= $result['id'] ?>')" >MODIFIER</button>
                         </div>
 
                     </div>
@@ -50,33 +48,33 @@
 <div class="write" >
     <h1> NOTES / COMMENTAIRES </h1>
 
-    <form action="" method="GET" >
-
         <div class="commentaire">
-            
-            <div class="sujet">
-                <input type="text" name="sujet" required placeholder="Votre sujet" style="width: 900px; height: 50px;" >
-            </div>
 
-            <div class="descr">
-                <input name="descr" required placeholder="Votre description" style="width: 900px; height: 50px;" >
-            </div>
+            <form action="" method="GET" >
             
-            <div class="note">
-                <textarea name="notes" required placeholder="Vos notes" style="width: 900px; height: 100px;" ></textarea>
-            </div>
+                <div class="sujet">
+                    <input type="text" name="sujet" required placeholder="Votre sujet" style="width: 50%; height: 50px;" >
+                </div>
+                
+                <div class="note">
+                    <textarea name="notes" required placeholder="Vos notes" style="width: 50%; height: 100px;" ></textarea>
+                </div>
 
-            <div class="send-btn">
-                <button>ENVOYER</button>
-            </div>
+                <div class="send-btn">
+                    <button>ENVOYER</button>
+                </div>
+            </form>
 
-            
+            <div class="retour" >
+                <a href="lobby.php"><button>RETOUR</button></a>
+            </div>
+          
         </div>
 
-    </form>
+   
 
-    <a href="lobby.php"><button>RETOUR</button></a>
-
+   
+    
 </div>
 
 <?php

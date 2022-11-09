@@ -261,6 +261,7 @@ footer{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    cursor: pointer;
 }
 
 .f_item2 div:hover{

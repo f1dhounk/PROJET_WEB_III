@@ -52,7 +52,7 @@
 
 				if ( $resultat == "SIGNED_OUT" ){
 					
-					header("location:quit.php"); exit;
+					header("location:login.php"); exit;
 				}
 				else{
 					var_dump($resultat);exit;

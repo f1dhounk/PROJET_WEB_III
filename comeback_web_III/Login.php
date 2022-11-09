@@ -14,20 +14,20 @@
                 ?> <div>Succes : Connexion fonctionne</div> <?php
             }
             else if ($data["tab"]["reponse"] == 1) {
-                ?> <div>Erreur : Connexion erronne</div> 
-                
-                <script> 
-                
-                    document.body.style.backgroundImage = "url('zenitsu_cry.gif')";
+                ?> 
+                    <script> 
+                    
+                        document.body.style.backgroundImage = "url('img/background/gojo_pic.gif')";
 
-                </script>
+                    </script>
                 <?php
                 
             }
         ?>
 
+        <div class="magix" >ANIME MAGIX</div>
+
         <div id="valid"> 
-    
             <div><input type="text" name="username" placeholder="USERNAME"></div>
     
             <div><input type="password" name="password" placeholder="PASSWORD"></div>
