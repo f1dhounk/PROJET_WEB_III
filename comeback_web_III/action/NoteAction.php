@@ -24,7 +24,6 @@
             }
 
             if ( isset($_POST["od"]) ){
-                var_dump($_POST["od"]);
                 AnswerDAO::suppnotes( $_POST["od"] ); 
             }
             
