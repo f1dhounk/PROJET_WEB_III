@@ -14,8 +14,9 @@ body {
     height: 100vh;
     background-size: cover;
 
-    display: flex; 
-    justify-content: space-around;
+    display: grid;
+    place-items: center;
+    /* justify-content: space-around; */
 }
 
 /* .quit {
@@ -26,15 +27,24 @@ body {
     background-size: cover;
 } */
 
+button {
+    background-color: transparent; 
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
 .container{
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    /* gap: 10px; */
 }
 
 .item1  {
     width: 350px;
-    height: 450px;
+    height: 400px;
     position: relative;
 }
 
@@ -183,14 +193,6 @@ body {
     z-index: -1;
 }*/
 
-button {
-    background-color: transparent; 
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-}
 
 iframe {
     position: absolute;
